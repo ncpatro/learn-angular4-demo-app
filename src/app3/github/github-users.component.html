@@ -1,0 +1,31 @@
+<div class="container">
+  <div class='panel panel-primary'>
+    <div class='panel-heading'>
+      {{pageTitle}}
+    </div>
+    <div class='panel-body'>
+      <div class='table-responsive'>
+        <table class='table' *ngIf='githubUsers && githubUsers.length'>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>Name</th>
+              <th>Blog</th>
+              <th>Repos</th>
+              <th>Created on</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let githubUser of githubUsers'>
+              <td>{{ githubUser.id }}</td>
+              <td>{{ githubUser.name }}</td>
+              <td>{{ githubUser.blog }}</td>
+              <td>{{ githubUser.public_repos }}</td>
+              <td>{{ githubUser.created_at }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

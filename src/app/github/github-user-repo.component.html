@@ -1,0 +1,35 @@
+<div class="container">
+  <div class='panel panel-primary'>
+    <div class='panel-heading'>
+      <h2>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px; margin-right:20px'>
+          <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>{{pageTitle}}
+      </h2>
+    </div>
+  </div>
+  <div class='panel-body'>
+    <div class='table-responsive'>
+      <table class='table' *ngIf='gitHubUserRepos && gitHubUserRepos.length'>
+        <thead>
+          <tr>
+            <th>Repo-name</th>
+            <th>forks</th>
+            <th>open_issues</th>
+            <th>watchers</th>
+            <th>language</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let gitHubUserRepo of gitHubUserRepos'>
+            <td>{{ gitHubUserRepo.name }}</td>
+            <td>{{ gitHubUserRepo.forks }}</td>
+            <td>{{ gitHubUserRepo.open_issues }}</td>
+            <td>{{ gitHubUserRepo.watchers }}</td>
+            <td>{{ gitHubUserRepo.language }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
